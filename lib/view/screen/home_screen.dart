@@ -1,50 +1,63 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:inno_tech/export.dart';
 import 'package:inno_tech/helper/api_helper.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
 
-  final ApiController apiController = Get.put(ApiController());
+  final ApiController _apiController = Get.put(ApiController());
 
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
+      navigationBar: const CupertinoNavigationBar(
+        middle: Text("Home"),
+      ),
       child: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.all(16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CupertinoTextField(
-              controller: apiController.nameController,
-              placeholder: 'name',
+              controller: _apiController.nameController,
+              placeholder: 'Name',
               decoration: BoxDecoration(
-                border: Border.all(color: CupertinoColors.inactiveGray),
-                borderRadius: BorderRadius.circular(8.0),
-              ),
+                  color: CupertinoColors.systemYellow.darkElevatedColor,
+                  border:
+                      Border.all(width: 2, color: CupertinoColors.activeBlue),
+                  borderRadius: BorderRadius.circular(10)),
             ),
-            const SizedBox(height: 10.0),
+            const SizedBox(
+              height: 10,
+            ),
             CupertinoTextField(
-              controller: apiController.emailController,
+              controller: _apiController.emailController,
               placeholder: 'Email',
               decoration: BoxDecoration(
-                border: Border.all(color: CupertinoColors.inactiveGray),
-                borderRadius: BorderRadius.circular(8.0),
-              ),
+                  color: CupertinoColors.systemYellow.darkElevatedColor,
+                  border:
+                      Border.all(width: 2, color: CupertinoColors.activeBlue),
+                  borderRadius: BorderRadius.circular(10)),
             ),
-            const SizedBox(height: 10.0),
+            const SizedBox(
+              height: 10,
+            ),
             CupertinoButton.filled(
-              onPressed: apiController.postData,
-              child: const Text('Submit'),
+              onPressed: () {
+                _apiController.postData();
+                _apiController.nameController.clear();
+                _apiController.emailController.clear();
+              },
+              child: const Text("Submit"),
             ),
-            const SizedBox(height: 20.0),
+            const SizedBox(
+              height: 20,
+            ),
             Obx(
               () => Text(
-                apiController.result.value,
-                style: TextStyle(fontSize: 16.0),
+                _apiController.result.value,
+                style: const TextStyle(fontSize: 16),
               ),
-            ),
+            )
           ],
         ),
       ),

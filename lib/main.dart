@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:get/get.dart';
-import 'package:inno_tech/utils/routes.dart';
+import 'package:inno_tech/export.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetCupertinoApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: MyRoutes.homeRoutes(),
+      initialRoute: MyRoutes.splashRoutes(),
       getPages: MyRoutes.routes,
     );
   }
