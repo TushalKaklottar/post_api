@@ -12,7 +12,7 @@ class MyRoutes {
   static List<GetPage> routes = [
     GetPage(
       name: _splash,
-      page: () => SplashScreen(),
+      page: () => const SplashScreen(),
       transition: Transition.circularReveal,
     ),
     GetPage(

@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
         middle: Text("Home"),
       ),
       child: Padding(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -52,12 +52,19 @@ class HomePage extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            Obx(
-              () => Text(
-                _apiController.result.value,
-                style: const TextStyle(fontSize: 16),
-              ),
-            )
+            Obx(() => Text(
+                  _apiController.result.value,
+                  style: const TextStyle(fontSize: 16),
+                )),
+            SizedBox(
+              height: 20,
+            ),
+            CupertinoButton.filled(
+              onPressed: () {
+                Get.to(DataBase());
+              },
+              child: const Text("Data-Base"),
+            ),
           ],
         ),
       ),
