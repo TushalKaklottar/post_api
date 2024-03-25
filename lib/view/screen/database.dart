@@ -1,8 +1,8 @@
 // How many types of databases are there in Flutter?
 // In general, databases are of two types,
-// Relational and Non-Relational databases.
-// Relational databases are the sets of data that have
-// a relationship with each other.
+// 1). Relational
+// 2). Non-Relational databases.
+// Relational databases are the sets of data that have a relationship with each other.
 // The data sets have data stored in the form of
 // tables with rows and columns.
 
@@ -14,7 +14,9 @@ class DataBase extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(),
+      navigationBar: CupertinoNavigationBar(
+        middle: Text("DataBase"),
+      ),
       child: Column(
         children: const [
           Center(

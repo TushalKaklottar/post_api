@@ -46,6 +46,8 @@ class HomePage extends StatelessWidget {
                 _apiController.postData();
                 _apiController.nameController.clear();
                 _apiController.emailController.clear();
+                print("Name: ${_apiController.nameController.text}");
+                print("Email: ${_apiController.emailController.text}");
               },
               child: const Text("Submit"),
             ),
