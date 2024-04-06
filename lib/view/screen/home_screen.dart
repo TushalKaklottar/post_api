@@ -33,10 +33,10 @@ class HomePage extends StatelessWidget {
               controller: _apiController.emailController,
               placeholder: 'Email',
               decoration: BoxDecoration(
-                  color: CupertinoColors.systemYellow.darkElevatedColor,
-                  border:
-                      Border.all(width: 2, color: CupertinoColors.activeBlue),
-                  borderRadius: BorderRadius.circular(10)),
+                color: CupertinoColors.systemYellow.darkElevatedColor,
+                border: Border.all(width: 2, color: CupertinoColors.activeBlue),
+                borderRadius: BorderRadius.circular(10),
+              ),
             ),
             const SizedBox(
               height: 10,
@@ -46,8 +46,6 @@ class HomePage extends StatelessWidget {
                 _apiController.postData();
                 _apiController.nameController.clear();
                 _apiController.emailController.clear();
-                print("Name: ${_apiController.nameController.text}");
-                print("Email: ${_apiController.emailController.text}");
               },
               child: const Text("Submit"),
             ),
